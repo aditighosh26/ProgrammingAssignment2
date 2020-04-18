@@ -10,18 +10,6 @@
 
 ## This function creates a special "matrix" object that can cache its inverse.
 
-cachemean <- function(x, ...) {
-        m <- x$getmean()
-        if(!is.null(m)) {
-                message("getting cached data")
-                return(m)
-        }
-        data <- x$get()
-        m <- mean(data, ...)
-        x$setmean(m)
-        m
-}
-
 makeCacheMatrix <- function(x = matrix()) {
 j<- NULL
 set<- function(y){
